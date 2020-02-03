@@ -1,0 +1,7 @@
+{% if app.user.username == 'admin' %}
+<form method="post" action="{{ path('dzielo_delete', {'id': dzielo.id}) }}" onsubmit="return confirm('Czy na pewno chcesz usunąć dany rekord?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ dzielo.id) }}">
+    <button class="btn btn-danger">Usuń</button>
+</form>
+{% endif %}

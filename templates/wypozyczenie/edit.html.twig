@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edytuj Wypożyczenie{% endblock %}
+
+{% block body %}
+   <center>
+    <h1>Edytuj Wypożyczenie</h1>
+
+    {{ include('wypozyczenie/_form.html.twig', {'button_label': 'Zatwierdź'}) }}
+
+    <a class="btn btn-warning" href="{{ path('wypozyczenie_index') }}">Powrót do listy</a>
+
+    {{ include('wypozyczenie/_delete_form.html.twig') }}
+    </center>
+{% endblock %}

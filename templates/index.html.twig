@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menu użytkowe{% endblock %}
+
+{% block body %}
+
+{% if app.user.username == 'admin'  %}<br>
+	<div class="border border-danger" style="margin-left:150px;margin-right:150px">
+	<br>
+		<center>
+			<h1 class="h3 mb-3 font-weight-normal"><strong>Menu zarządzania administratora 🛠️</strong></h1>
+
+			<a class="btn btn-danger" href="/uzytkownicy" role="button">Użytkownicy systemu</a> <!--Widoczne tylko dla head admina!!-->
+			<br><br>
+			<a class="btn btn-dark" href="/dzielo" role="button">Dzieła</a>
+			<a class="btn btn-dark" href="/autor" role="button">Autorzy</a>
+			<a class="btn btn-dark" href="/pokoj" role="button">Pomieszczenia</a>
+			<a class="btn btn-dark" href="/mebel" role="button">Meble</a>
+			<a class="btn btn-dark" href="/polka" role="button">Półki</a>
+			<a class="btn btn-dark" href="{{ path('historia') }}" role="button">Historia wypożyczeń</a>
+		
+		</center>
+	<br>
+		{% else %}
+		<br>
+		<div class="border border-success" style="margin-left:150px;margin-right:150px">
+			<br>
+			<center>
+				<h1 class="h3 mb-3 font-weight-normal"><strong>Menu użytkownika 📚</strong></h1>
+				<a class="btn btn-dark" href="/dzielo" role="button">Zawartość biblioteki</a>
+				<a class="btn btn-dark" href="{{ path('historia') }}" role="button">Historia wypożyczeń</a>
+			</center>
+			<br>
+		</div>
+		<br>
+		{% endif %}
+{% endblock %}

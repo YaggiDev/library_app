@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Meble{% endblock %}
+
+{% block body %}
+    <h1>Meble</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ilosc_polek</th>
+                <th>Nazwa</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for mebel in mebels %}
+            <tr>
+                <td>{{ mebel.id }}</td>
+                <td>{{ mebel.iloscPolek }}</td>
+                <td>{{ mebel.nazwa }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('mebel_show', {'id': mebel.id}) }}">Pokaż</a>
+                    <a class="btn btn-warning" href="{{ path('mebel_edit', {'id': mebel.id}) }}">Edytuj</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Brak znalezionych rekordów</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-success" href="{{ path('mebel_new') }}">Dodaj mebel</a>
+{% endblock %}

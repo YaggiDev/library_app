@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dzieła{% endblock %}
+
+{% block body %}
+    <h1>Dzieła</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tytul</th>
+                <th>Kod_jezyka</th>
+                <th>Rodzaj_dokumentu</th>
+                <th>Polozenie_aktualne</th>
+                <th>Zdjecie</th>
+                <th>Czy_wypozyczone</th>
+                <th>Czy_dla_doroslych</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for dzielo in dzielos %}
+            <tr>
+                <td>{{ dzielo.id }}</td>
+                <td>{{ dzielo.tytul }}</td>
+                <td>{{ dzielo.kodJezyka }}</td>
+                <td>{{ dzielo.rodzajDokumentu }}</td>
+                <td>{{ dzielo.polozenieAktualne }}</td>
+                <td>{{ dzielo.zdjecie }}</td>
+                <td>{{ dzielo.czyWypozyczone ? 'Tak' : 'Nie' }}</td>
+{#                <td>{{ dzielo.dataDodania ? dzielo.dataDodania|date('Y-m-d H:i:s') : '' }}</td>#}
+{#                <td>{{ dzielo.dataUsuniecia ? dzielo.dataUsuniecia|date('Y-m-d H:i:s') : '' }}</td>#}
+                <td>{{ dzielo.czyDlaDoroslych ? 'Tak' : 'Nie' }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('dzielo_show', {'id': dzielo.id}) }}">Pokaż</a>
+                    {% if app.user.username == 'admin' %}
+                    <a class="btn btn-warning" href="{{ path('dzielo_edit', {'id': dzielo.id}) }}">Edytuj</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">Brak znalezionych rekordów</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% if app.user.username == 'admin' %}
+    <a class="btn btn-success" href="{{ path('dzielo_new') }}">Dodaj dzieło</a>
+    {% endif %}
+{% endblock %}

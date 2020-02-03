@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dodaj Mebel{% endblock %}
+
+{% block body %}
+    <center>
+    <h1>Dodaj Mebel</h1>
+
+    {{ include('mebel/_form.html.twig') }}
+
+    <a class="btn btn-warning" href="{{ path('mebel_index') }}">Powrót do listy</a>
+    </center>
+{% endblock %}

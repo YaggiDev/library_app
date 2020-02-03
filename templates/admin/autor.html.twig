@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DzieloController!{% endblock %}
+
+{% block body %}
+    {% set i = 0 %}
+    <table class="dzielo_table">
+        {% for dzielo in dziela %}
+            {{dzielo.tytul}}
+
+        {% endfor %}
+           
+    </table>
+    
+{% endblock %}

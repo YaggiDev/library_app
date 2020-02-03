@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Historia wypożyczeń{% endblock %}
+
+{% block body %}
+    <h1>Historia wypożyczeń</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Status</th>
+            <th>Data_wypozyczenia</th>
+            <th>Akcje</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for wypozyczenie in wypozyczenies %}
+            <tr>
+                <td>{{ wypozyczenie.id }}</td>
+                <td>{{ wypozyczenie.status ? 'Wypożyczone' : 'Oddane' }}</td>
+                <td>{{ wypozyczenie.dataWypozyczenia ? wypozyczenie.dataWypozyczenia|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <form action="{{ path('oddaj') }}" method="POST" >
+                        <input type="hidden" value="{{ wypozyczenie.id }}" name="oddaj">
+                        <input type ="hidden" value="{{ app.user.id }}" name="user_id">
+                        {% if wypozyczenie.status == 'Wypożyczone' %}
+                        <button class="btn btn-sm btn-primary" href="{{ path('oddaj')}}">Oddaj</button>
+                            {% else %}
+                                <button class="btn btn-dark" href="{{ path('oddaj')}}" disabled>Oddaj</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Brak znalezionych rekordów</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

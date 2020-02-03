@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Półki{% endblock %}
+
+{% block body %}
+    <h1>Półki</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Czy_pelna</th>
+                <th>Numer</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for polka in polkas %}
+            <tr>
+                <td>{{ polka.id }}</td>
+                <td>{{ polka.czyPelna ? 'Tak' : 'Nie' }}</td>
+                <td>{{ polka.numer }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('polka_show', {'id': polka.id}) }}">Pokaż</a>
+                    <a class="btn btn-warning" href="{{ path('polka_edit', {'id': polka.id}) }}">Edytuj</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Brak znalezionych rekordów</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-success" href="{{ path('polka_new') }}">Dodaj półkę</a>
+{% endblock %}

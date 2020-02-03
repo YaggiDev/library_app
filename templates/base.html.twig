@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+{#        <link rel="stylesheet" href="navbar.css" type="text/css">#}
+        {% block head %}
+        {% endblock %}
+        <link href="{{ asset('styles/navbar.css') }}" rel="stylesheet" type="text/css">
+        <link rel="icon" href="{{ asset('images/Logogifek.png') }}">
+        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+        <link href="{{ asset('styles/carousel.css') }}" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+    {{ include('navbar.html.twig') }}
+        {% block body %}{% endblock %}
+{#     {{ include('inc/footer.html.twig') }}#}
+        {% block javascripts %}
+
+        {% endblock %}
+    </body>
+</html>

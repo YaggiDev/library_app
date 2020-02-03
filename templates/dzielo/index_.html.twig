@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Szukaj{% endblock %}
+
+{% block body %}
+    {% set i = 0 %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Rodzaj dokumentu</th>
+            <th>Tytuł</th>
+            <th>Zdjęcie</th>
+            <th>Autor</th>
+            <th></th>
+        </tr>
+        </thead>
+        {% for dzielo in dziela %}
+            <tbody>
+            <tr>
+                <td>{{ dzielo.rodzajdokumentu }}</td>
+                <td>{{ dzielo.tytul }}</td>
+                <td>...</td>
+                <td></td>
+            </tr>
+            </tbody>
+
+
+        {% endfor %}
+           
+    </table>
+    
+{% endblock %}

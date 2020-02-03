@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dzieło{% endblock %}
+
+{% block body %}
+    <center><h1>Dzieło</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ dzielo.id }}</td>
+            </tr>
+            <tr>
+                <th>Tytul</th>
+                <td>{{ dzielo.tytul }}</td>
+            </tr>
+            <tr>
+                <th>Kod_jezyka</th>
+                <td>{{ dzielo.kodJezyka }}</td>
+            </tr>
+            <tr>
+                <th>Rodzaj dokumentu</th>
+                <td>{{ dzielo.rodzajDokumentu }}</td>
+            </tr>
+            <tr>
+                <th>Polozenie pierwotne</th>
+                <td>{{ dzielo.polozeniePierwotne }}</td>
+            </tr>
+            <tr>
+                <th>Polozenie aktualne</th>
+                <td>{{ dzielo.polozenieAktualne }}</td>
+            </tr>
+            <tr>
+                <th>Zdjecie</th>
+                <td>{{ dzielo.zdjecie }}</td>
+            </tr>
+            <tr>
+                <th>Czy wypożyczone</th>
+                <td>{{ dzielo.czyWypozyczone ? 'Tak' : 'Nie' }}</td>
+            </tr>
+            {% if app.user.username == 'admin' %}
+            <tr>
+                <th>Data dodania</th>
+                <td>{{ dzielo.dataDodania ? dzielo.dataDodania|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+
+            <tr>
+                <th>Czy prywatne</th>
+                <td>{{ dzielo.czyPrywatne ? 'Tak' : 'Nie' }}</td>
+            </tr>
+            {% endif %}
+            <tr>
+                <th>Czy dla doroslych</th>
+                <td>{{ dzielo.czyDlaDoroslych ? 'Tak' : 'Nie' }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tr>
+            <td> <a class = "btn btn btn-warning" href="{{ path('dzielo_index') }}">Powrót do listy</a></td>
+
+            <form method="POST" action="{{ path('wypozycz') }}">
+        <input type="hidden" value="{{ dzielo.id }}" name="dzielo">
+        <input type="hidden" value="{{ app.user.id }}" name="user_id">
+        <input type="hidden" value="1" name="status">
+                {% if dzielo.czyWypozyczone == 0 %}
+        <td><button class="btn btn-primary" type="submit">Wypożycz</button></td>
+                {% else %}
+                <td><button class="btn btn-primary" type="submit" disabled>Wypożycz</button></td>
+                {% endif %}
+    </form>
+            {% if app.user.username == 'admin' %}
+            <td> <a class = "btn btn-success" href="{{ path('dzielo_edit', {'id': dzielo.id}) }}">Edytuj</a></td>
+            {% endif %}
+            <td> {{ include('dzielo/_delete_form.html.twig') }}</td>
+        </tr>
+    </table>
+    </center>
+{% endblock %}

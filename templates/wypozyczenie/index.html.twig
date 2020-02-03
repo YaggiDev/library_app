@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wypożyczenie{% endblock %}
+
+{% block body %}
+    <h1>Wypożyczenie</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Status</th>
+                <th>Data_wypozyczenia</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for wypozyczenie in wypozyczenies %}
+            <tr>
+                <td>{{ wypozyczenie.id }}</td>
+                <td>{{ wypozyczenie.status ? 'Wypożyczone' : 'Oddane' }}</td>
+                <td>{{ wypozyczenie.dataWypozyczenia ? wypozyczenie.dataWypozyczenia|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('wypozyczenie_show', {'id': wypozyczenie.id}) }}">Pokaż</a>
+                    <a class="btn btn-warning" href="{{ path('wypozyczenie_edit', {'id': wypozyczenie.id}) }}">Edytuj</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Brak znalezionych rekordów</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-success" href="{{ path('wypozyczenie_new') }}">Wypożycz</a>
+{% endblock %}

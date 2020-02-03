@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dodaj Pokój{% endblock %}
+
+{% block body %}
+    <center>
+    <h1>Dodaj Pokój</h1>
+
+    {{ include('pokoj/_form.html.twig') }}
+
+    <a class="btn btn-warning" href="{{ path('pokoj_index') }}">Powrót do listy</a>
+    </center>
+{% endblock %}

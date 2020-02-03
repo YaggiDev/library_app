@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Użytkownicy systemu{% endblock %}
+
+{% block body %}
+    <table>
+        <tr>
+            <th>ID użytkownika</th>
+            <th>Nazwa użytkownika</th>
+            <th>Akcja</th>
+        </tr>
+        {% for uzytkownik in uzytkownicy %}
+        <tr>
+            <td>{{  uzytkownik.id }}</td>
+            <td>{{ uzytkownik.username }}</td>
+            <td><form method="POST" action="{{ path('usun') }}">
+                    <input type="hidden" value="{{ uzytkownik.id }}" name="user_id">
+                    <button type="submit" class="btn btn-danger">Usuń</button>
+                </form></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
