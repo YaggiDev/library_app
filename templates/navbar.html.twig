@@ -25,6 +25,11 @@
 				<li class="nav-item active">
 					<form class="form-inline" method="POST" action="{{ path('search') }}">
 						<input class="form-control mr-sm-2" type="search" placeholder="Wyszukaj.." aria-label="Search" name='search'>
+						<select class="selectpicker" data-style="btn btn-outline-success my-2 my-sm-0">
+							<option value="ksiażka">Książka</option>
+							<option value="nuty">Nuty</option>
+							<option value="czasopismo">Czasopismo</option>
+						</select>
 						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Szukaj</button>
 					</form>
 				</li>
