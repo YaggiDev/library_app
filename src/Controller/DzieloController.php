@@ -105,7 +105,7 @@ class DzieloController extends AbstractController
     {
 
         $data = $request->request->get('search');
-
+        $category = $request->request->get('category');
 
         $em = $this->getDoctrine()->getManager();
         $query = $em->createQuery(
