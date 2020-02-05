@@ -36,7 +36,7 @@ class Uzytkownik implements UserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="bool")
+     * @ORM\Column(type="boolean")
      */
     private $czy_dorosly;
 
@@ -57,7 +57,7 @@ class Uzytkownik implements UserInterface
     }
 
     /**
-     * @ORM\Column(type="bool")
+     * @ORM\Column(type="boolean")
      */
     private $czy_potwierdzone;
 
