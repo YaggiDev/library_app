@@ -49,9 +49,9 @@ class DzieloController extends AbstractController
             $entityManager->flush();
 
             $autor_id = $request->request->get('autor');
-            var_dump($dzielo->getId());
-            $autor_dzielo->setDzieloId($dzielo->getId());
-            $autor_dzielo->setAutorId($autor_id);
+            $autor = $this->getDoctrine()->getRepository(Autor::class)->find($autor_id);
+            $autor_dzielo->setDzieloId($dzielo);
+            $autor_dzielo->setAutorId($autor);
             $entityManager->persist($autor_dzielo);
             $entityManager->flush();
             return $this->redirectToRoute('dzielo_index');
