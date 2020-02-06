@@ -72,7 +72,7 @@ class Dzielo
      * @ORM\Column(type="boolean")
      */
     private $czy_dla_doroslych;
-	
+
 	/**
      * @ORM\ManyToOne(targetEntity="Polka")
 	 * @ORM\JoinColumn(name="polka_id", referencedColumnName="id")

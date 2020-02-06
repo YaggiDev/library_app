@@ -35,7 +35,31 @@ class Uzytkownik implements UserInterface
      */
     private $password;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $czy_dorosly;
 
+    /**
+     * @return mixed
+     */
+    public function getCzyDorosly()
+    {
+        return $this->czy_dorosly;
+    }
+
+    /**
+     * @param mixed $czy_dorosly
+     */
+    public function setCzyDorosly($czy_dorosly): void
+    {
+        $this->czy_dorosly = $czy_dorosly;
+    }
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $czy_potwierdzone;
 
     public function getId(): ?int
     {
