@@ -95,7 +95,7 @@ class DzieloController extends AbstractController
         var_dump($autor->getImie());
         return $this->render('dzielo/edit.html.twig', [
             'dzielo' => $dzielo,
-
+            'autorzy' => $autor,
             'form' => $form->createView(),
         ]);
     }
