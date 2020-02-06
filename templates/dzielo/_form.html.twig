@@ -1,6 +1,6 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
-     Autor<select class="selectoption">
+     Autor <select class="selectoption" required>
          {% for autor in autorzy %}
             <option value="{{ autor.id }}">{{ autor.imie}} {{ autor.nazwisko }}</option>
          {% endfor %}
