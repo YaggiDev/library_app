@@ -42,6 +42,7 @@ class DzieloController extends AbstractController
         $form = $this->createForm(DzieloType::class, $dzielo);
         $form->handleRequest($request);
         $autor_dzielo = new Autor_dzielo();
+
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($dzielo);
