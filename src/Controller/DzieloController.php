@@ -91,9 +91,11 @@ class DzieloController extends AbstractController
         $autor_dziela = $this->getDoctrine()->getRepository(Autor_dzielo::class)->findOneBy(['dzielo_id'=>10]);
         var_dump($dzielo->getId());
         $id = $autor_dziela->getId();
+        $autor = $this->getDoctrine()->getRepository(Autor::class)->find($id),
+        var_dump($autor);
         return $this->render('dzielo/edit.html.twig', [
             'dzielo' => $dzielo,
-            'autorzy' => $autor = $this->getDoctrine()->getRepository(Autor::class)->find($id),
+
             'form' => $form->createView(),
         ]);
     }
