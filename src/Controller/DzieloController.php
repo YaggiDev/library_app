@@ -47,10 +47,10 @@ class DzieloController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($dzielo);
             $entityManager->flush();
-            $dzielo_id = $dzielo->getId();
+
             $autor_id = $request->request->get('autor');
 
-            $autor_dzielo->setDzieloId($dzielo_id);
+            $autor_dzielo->setDzieloId($dzielo->getId());
             $autor_dzielo->setAutorId($autor_id);
             $entityManager->persist($autor_dzielo);
             $entityManager->flush();
