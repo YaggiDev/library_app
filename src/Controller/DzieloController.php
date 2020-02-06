@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Autor;
 use App\Entity\Dzielo;
-use App\Entity\Autor_dzielo;
+use App\Entity\Autor_Dzielo;
 use App\Form\DzieloType;
 use App\Repository\DzieloRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -48,7 +48,7 @@ class DzieloController extends AbstractController
             $entityManager->flush();
             $dzielo_id = $dzielo->getId();
             $autor_id = $request->request->get('autor');
-            $autor_dzielo = new Autor_dzielo();
+            $autor_dzielo = new Autor_Dzielo();
             $autor_dzielo->setDzieloId($dzielo_id);
             $autor_dzielo->setAutorId($autor_id);
             $entityManager->persist($autor_dzielo);
