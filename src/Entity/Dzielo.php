@@ -73,29 +73,6 @@ class Dzielo
      */
     private $czy_dla_doroslych;
 
-
-    /**
-     * ORM\OneToMany(targetEntity="Autor_Dzielo")
-     * ORM\JoinColumn(name="autor_dzielo", referencedColumnName="id")
-     */
-    private $autor_dzielo;
-
-    /**
-     * @return mixed
-     */
-    public function getAutorDzielo()
-    {
-        return $this->autor_dzielo;
-    }
-
-    /**
-     * @param mixed $autor_dzielo
-     */
-    public function setAutorDzielo($autor_dzielo): void
-    {
-        $this->autor_dzielo = $autor_dzielo;
-    }
-
 	/**
      * @ORM\ManyToOne(targetEntity="Polka")
 	 * @ORM\JoinColumn(name="polka_id", referencedColumnName="id")
