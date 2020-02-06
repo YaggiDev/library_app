@@ -87,7 +87,7 @@ class DzieloController extends AbstractController
 
             return $this->redirectToRoute('dzielo_index');
         }
-        $autor_dziela = $this->getDoctrine()->getRepository(Autor_dzielo::class)->findOneBy(array('dzielo_id'=>$dzielo->getId()));
+        $autor_dziela = $this->getDoctrine()->getRepository(Autor_dzielo::class)->findOneBy(['dzielo_id'=>$dzielo->getId()]);
         var_dump($dzielo->getId());
         var_dump($autor_dziela);
         return $this->render('dzielo/edit.html.twig', [
