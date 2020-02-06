@@ -2,7 +2,7 @@
     {{ form_widget(form) }}
      <select class="selectoption">
          {% for autor in autorzy %}
-            <option value="{{ autor.id }}">{{ autor.imie, autor.nazwisko }}</option>
+            <option value="{{ autor.id }}">{{ autor.imie}} {{ autor.nazwisko }}</option>
          {% endfor %}
      </select>
     <button class="btn btn-success">{{ button_label|default('Zapisz') }}</button>
