@@ -2,7 +2,7 @@
     {{ form_widget(form) }}
      Autor <select class="selectoption" name="autor" required>
          {% for autor in autorzy %}
-            <option value="{{ autor.id }}">{{ autor.imie}} {{ autor.nazwisko }}</option>
+            <option value="{{ autor.id }}">{{ autor.getImie()}} {{ autor.getNazwisko() }}</option>
          {% endfor %}
      </select>
     <button class="btn btn-success">{{ button_label|default('Zapisz') }}</button>
