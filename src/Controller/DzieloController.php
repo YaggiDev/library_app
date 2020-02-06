@@ -51,6 +51,7 @@ class DzieloController extends AbstractController
 
         return $this->render('dzielo/new.html.twig', [
             'dzielo' => $dzielo,
+            'autorzy' => $autor = $this->getDoctrine()->getRepository(Autor::class)->findAll(),
             'form' => $form->createView(),
         ]);
     }
