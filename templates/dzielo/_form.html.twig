@@ -4,7 +4,6 @@
          {% for autor in autorzy %}
             <option value="{{ autor.id }}">{{ autor.getImie()}} {{ autor.getNazwisko() }}</option>
          {% endfor %}
-    {{ autorzy.imie }}
      </select>
     <button class="btn btn-success">{{ button_label|default('Zapisz') }}</button>
 {{ form_end(form) }}
