@@ -49,7 +49,7 @@ class DzieloController extends AbstractController
             $entityManager->flush();
 
             $autor_id = $request->request->get('autor');
-
+            var_dump($dzielo->getId());
             $autor_dzielo->setDzieloId($dzielo->getId());
             $autor_dzielo->setAutorId($autor_id);
             $entityManager->persist($autor_dzielo);
