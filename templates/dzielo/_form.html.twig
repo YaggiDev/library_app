@@ -1,4 +1,19 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
+     Autor <select class="selectoption" name="autor" required>
+         {% for autor in autorzy %}
+             {% if id is defined %}
+                {% if id == autor.id %}
+                    {{ id }}
+                    <option value="{{ autor.id }}" selected>{{ autor.getImie()}} {{ autor.getNazwisko() }}</option>
+                {% else %}
+                    <option value="{{ autor.id }}">{{ autor.getImie()}} {{ autor.getNazwisko() }}</option>
+                {% endif %}
+             {% else %}
+
+                <option value="{{ autor.id }}">{{ autor.getImie()}} {{ autor.getNazwisko() }}</option>
+             {% endif %}
+         {% endfor %}
+     </select>
     <button class="btn btn-success">{{ button_label|default('Zapisz') }}</button>
 {{ form_end(form) }}

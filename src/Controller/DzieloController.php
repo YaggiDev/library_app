@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Autor;
 use App\Entity\Dzielo;
+use App\Entity\Autor_dzielo;
 use App\Form\DzieloType;
 use App\Repository\DzieloRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -40,17 +41,25 @@ class DzieloController extends AbstractController
         $dzielo = new Dzielo();
         $form = $this->createForm(DzieloType::class, $dzielo);
         $form->handleRequest($request);
+        $autor_dzielo = new Autor_dzielo();
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($dzielo);
             $entityManager->flush();
 
+            $autor_id = $request->request->get('autor');
+            $autor = $this->getDoctrine()->getRepository(Autor::class)->find($autor_id);
+            $autor_dzielo->setDzieloId($dzielo);
+            $autor_dzielo->setAutorId($autor);
+            $entityManager->persist($autor_dzielo);
+            $entityManager->flush();
             return $this->redirectToRoute('dzielo_index');
         }
 
         return $this->render('dzielo/new.html.twig', [
             'dzielo' => $dzielo,
+            'autorzy' => $autor = $this->getDoctrine()->getRepository(Autor::class)->findAll(),
             'form' => $form->createView(),
         ]);
     }
@@ -78,9 +87,15 @@ class DzieloController extends AbstractController
 
             return $this->redirectToRoute('dzielo_index');
         }
-
+        $dzielo_id = $dzielo->getId();
+        $autor_dziela = $this->getDoctrine()->getRepository(Autor_dzielo::class)->findOneBy(['dzielo_id'=>10]);
+        var_dump($dzielo->getId());
+        $id = $autor_dziela->getId();
+//        $autor = $this->getDoctrine()->getRepository(Autor::class)->findOneBy(['id'=>$id]);
         return $this->render('dzielo/edit.html.twig', [
             'dzielo' => $dzielo,
+            'autorzy' => $autor = $this->getDoctrine()->getRepository(Autor::class)->findAll(),
+            'id' => $id,
             'form' => $form->createView(),
         ]);
     }
