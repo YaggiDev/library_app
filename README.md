@@ -5,7 +5,7 @@ Library management application project for IT studies.
 - Ubuntu server 18.04.4 LTS, Release: 18.04
 - Apache2
 - MySQL
-- Symfony 4, Composer
+- Symfony 5.0.4, Composer
 - PHPStorm
 - Git
 
