@@ -7,6 +7,7 @@
                     <option value="{{ autor.id }}" selected>{{ autor.getImie()}} {{ autor.getNazwisko() }}</option>
                 {% else %}
                     <option value="{{ autor.id }}">{{ autor.getImie()}} {{ autor.getNazwisko() }}</option>
+                {% endif %}
              {% else %}
 
                 <option value="{{ autor.id }}">{{ autor.getImie()}} {{ autor.getNazwisko() }}</option>
