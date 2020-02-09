@@ -18,7 +18,7 @@ Library management application project for IT studies.
 - [ ] When returning the book current localization need to be required
 - [ ] Fix Author select-option field when editting specific book
 - [ ] Work on forms style
-- [ ] Add filters to form fields
+- [ ] Add restrictions to form fields
 - [ ] ...
 
 
