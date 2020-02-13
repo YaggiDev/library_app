@@ -19,8 +19,8 @@
                 <td>{{ kategoria.id }}</td>
                 <td>{{ kategoria.nazwa }}</td>
                 <td>
-                    <a href="{{ path('kategoria_show', {'id': kategoria.id}) }}">show</a>
-                    <a href="{{ path('kategoria_edit', {'id': kategoria.id}) }}">edit</a>
+                    <a class="btn btn-primary" href="{{ path('kategoria_show', {'id': kategoria.id}) }}">Pokaż</a>
+                    <a class="btn btn-primary" href="{{ path('kategoria_edit', {'id': kategoria.id}) }}">Edytuj</a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +31,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('kategoria_new') }}">Create new</a>
+    <a class="btn btn-success" href="{{ path('kategoria_new') }}">Dodaj kategorie</a>
 {% endblock %}

@@ -18,9 +18,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('kategoria_index') }}">back to list</a>
+    <a class = "btn btn btn-warning" href="{{ path('kategoria_index') }}">Powrót do listy</a>
 
-    <a href="{{ path('kategoria_edit', {'id': kategoria.id}) }}">edit</a>
+    <a class = "btn btn-success" href="{{ path('kategoria_edit', {'id': kategoria.id}) }}">Edytuj</a>
 
     {{ include('kategoria/_delete_form.html.twig') }}
 {% endblock %}
