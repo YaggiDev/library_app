@@ -124,7 +124,7 @@ class DzieloController extends AbstractController
 
         $em = $this->getDoctrine()->getManager();
         $query = $em->createQuery(
-            'SELECT p FROM App\Entity\Dzielo p JOIN p.Kategoria a
+            'SELECT p FROM App\Entity\Dzielo p JOIN p.Kategoria a.kategoria_id
     WHERE p.tytul LIKE :data ')
             ->setParameters(array(
                 'data'=>'%'.$data.'%',
