@@ -20,7 +20,7 @@
                 <td>{{ kategoria.nazwa }}</td>
                 <td>
                     <a class="btn btn-primary" href="{{ path('kategoria_show', {'id': kategoria.id}) }}">Pokaż</a>
-                    <a class="btn btn-primary" href="{{ path('kategoria_edit', {'id': kategoria.id}) }}">Edytuj</a>
+                    <a class="btn btn-warning" href="{{ path('kategoria_edit', {'id': kategoria.id}) }}">Edytuj</a>
                 </td>
             </tr>
         {% else %}

@@ -35,7 +35,7 @@
                 <td>
                     <a class="btn btn-primary" href="{{ path('dzielo_show', {'id': dzielo.id}) }}">Pokaż</a>
                     {% if app.user.username == 'admin' %}
-                    <a class="btn btn-primary" href="{{ path('dzielo_edit', {'id': dzielo.id}) }}">Edytuj</a>
+                    <a class="btn btn-warning" href="{{ path('dzielo_edit', {'id': dzielo.id}) }}">Edytuj</a>
                     {% endif %}
                 </td>
                 <td></td>
