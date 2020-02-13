@@ -24,6 +24,7 @@ class DzieloType extends AbstractType
             ->add('data_usuniecia')
             ->add('czy_prywatne')
             ->add('czy_dla_doroslych')
+            ->add('kategoria_id')
             ->add('polka_id',null,[
                 'required'=>true,
             ])
