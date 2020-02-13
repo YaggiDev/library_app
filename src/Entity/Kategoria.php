@@ -43,7 +43,7 @@ class Kategoria
     }
     public function __toString()
     {
-        return $this->nazwa;
+        return $this->$id;
     }
 
 
