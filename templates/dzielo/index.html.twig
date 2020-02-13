@@ -25,12 +25,13 @@
                 <td>{{ dzielo.id }}</td>
                 <td>{{ dzielo.tytul }}</td>
                 <td>{{ dzielo.kodJezyka }}</td>
-                <td>{% for kategoria in kategorie %}
-                        {% if kategoria.id == dzielo.kategoria_id %}
-                            {{ kategoria.nazwa }}
+                <td>{{ dzielo.kategoriaId }}
+{#                    {% for kategoria in kategorie %}#}
+{#                        {% if kategoria.id == dzielo.kategoria_id %}#}
+{#                            {{ kategoria.nazwa }}#}
 
-                        {% endif %}
-                    {% endfor %}
+{#                        {% endif %}#}
+{#                    {% endfor %}#}
                 </td>
                 <td>{{ dzielo.polozenieAktualne }}</td>
                 <td>{{ dzielo.zdjecie }}</td>
