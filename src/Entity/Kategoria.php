@@ -39,7 +39,7 @@ class Kategoria
 
     public function getId(): ?int
     {
-        return (int)$this->id;
+        return $this->id;
     }
     public function __toString()
     {
