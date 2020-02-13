@@ -70,8 +70,12 @@ class DzieloController extends AbstractController
      */
     public function show(Dzielo $dzielo): Response
     {
+        $autor_id = $this->getDoctrine()->getRepository(Autor_dzielo::class)->findOneBy(['dzielo_id' => $dzielo->getId()]);
+        $autor = $this->getDoctrine()->getRepository(Autor::class)->find($autor_id);
         return $this->render('dzielo/show.html.twig', [
             'dzielo' => $dzielo,
+            'autor' => $autor,
+
         ]);
     }
 
