@@ -21,6 +21,22 @@ class Kategoria
      */
     private $nazwa;
 
+    /**
+     * @return mixed
+     */
+    public function getNazwa()
+    {
+        return $this->nazwa;
+    }
+
+    /**
+     * @param mixed $nazwa
+     */
+    public function setNazwa($nazwa): void
+    {
+        $this->nazwa = $nazwa;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
