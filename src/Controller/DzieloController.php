@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Autor;
 use App\Entity\Dzielo;
 use App\Entity\Autor_dzielo;
+use App\Entity\Kategoria;
 use App\Form\DzieloType;
 use App\Repository\DzieloRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -28,7 +29,7 @@ class DzieloController extends AbstractController
 
         return $this->render('dzielo/index.html.twig', [
             'dzielos' => $dzieloRepository->findAll(),
-
+            'kategorie' => $kategorie = $this->getDoctrine()->getRepository(Kategoria::class)->findAll(),
 
         ]);
     }

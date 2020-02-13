@@ -10,7 +10,7 @@
                 <th>Id</th>
                 <th>Tytul</th>
                 <th>Kod_jezyka</th>
-                <th>Rodzaj_dokumentu</th>
+                <th>Kategoria</th>
                 <th>Polozenie_aktualne</th>
                 <th>Zdjecie</th>
                 <th>Czy dostępne</th>
@@ -25,7 +25,11 @@
                 <td>{{ dzielo.id }}</td>
                 <td>{{ dzielo.tytul }}</td>
                 <td>{{ dzielo.kodJezyka }}</td>
-                <td>{{ dzielo.rodzajDokumentu }}</td>
+                <td>{% for kategoria in kategorie %}
+                        {% if kategoria.id == dzielo.kategoria_id %}
+                            {{ kategoria.nazwa }}
+                        {% endif %}
+                </td>
                 <td>{{ dzielo.polozenieAktualne }}</td>
                 <td>{{ dzielo.zdjecie }}</td>
                 <td>{{ dzielo.czyWypozyczone ? 'Tak' : 'Nie' }}</td>
