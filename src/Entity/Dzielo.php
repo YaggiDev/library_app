@@ -80,6 +80,28 @@ class Dzielo
     private $polka_id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="kategoria")
+     * @ORM\JoinColumn(name="kategoria_id", referencedColumnName="id")
+     */
+    private $kategoria_id;
+
+    /**
+     * @return mixed
+     */
+    public function getKategoriaId()
+    {
+        return $this->kategoria_id;
+    }
+
+    /**
+     * @param mixed $kategoria_id
+     */
+    public function setKategoriaId($kategoria_id): void
+    {
+        $this->kategoria_id = $kategoria_id;
+    }
+
+    /**
      * @return mixed
      */
     public function getTytul()
