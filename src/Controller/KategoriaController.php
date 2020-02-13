@@ -21,7 +21,7 @@ class KategoriaController extends AbstractController
     public function index(KategoriaRepository $kategoriaRepository): Response
     {
         return $this->render('kategoria/index.html.twig', [
-            'kategorias' => $kategoriaRepository->findAll(),
+            'kategorie' => $kategoriaRepository->findAll(),
         ]);
     }
 
@@ -43,7 +43,7 @@ class KategoriaController extends AbstractController
         }
 
         return $this->render('kategoria/new.html.twig', [
-            'kategorium' => $kategorium,
+            'kategoria' => $kategorium,
             'form' => $form->createView(),
         ]);
     }
@@ -54,7 +54,7 @@ class KategoriaController extends AbstractController
     public function show(Kategoria $kategorium): Response
     {
         return $this->render('kategoria/show.html.twig', [
-            'kategorium' => $kategorium,
+            'kategoria' => $kategorium,
         ]);
     }
 
@@ -73,7 +73,7 @@ class KategoriaController extends AbstractController
         }
 
         return $this->render('kategoria/edit.html.twig', [
-            'kategorium' => $kategorium,
+            'kategoria' => $kategorium,
             'form' => $form->createView(),
         ]);
     }

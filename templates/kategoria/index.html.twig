@@ -14,13 +14,13 @@
             </tr>
         </thead>
         <tbody>
-        {% for kategorium in kategorias %}
+        {% for kategoria in kategorie %}
             <tr>
-                <td>{{ kategorium.id }}</td>
+                <td>{{ kategoria.id }}</td>
                 <td>{{ kategoria.nazwa }}</td>
                 <td>
-                    <a href="{{ path('kategoria_show', {'id': kategorium.id}) }}">show</a>
-                    <a href="{{ path('kategoria_edit', {'id': kategorium.id}) }}">edit</a>
+                    <a href="{{ path('kategoria_show', {'id': kategoria.id}) }}">show</a>
+                    <a href="{{ path('kategoria_edit', {'id': kategoria.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
