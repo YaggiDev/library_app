@@ -80,7 +80,7 @@ class Dzielo
     private $polka_id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="kategoria")
+     * @ORM\ManyToOne(targetEntity="Kategoria")
      * @ORM\JoinColumn(name="kategoria_id", referencedColumnName="id")
      */
     private $kategoria_id;
