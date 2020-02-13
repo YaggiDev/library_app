@@ -137,4 +137,16 @@ class Uzytkownik implements UserInterface
     {
         return $this->username;
     }
+
+    public function getCzyPotwierdzone(): ?bool
+    {
+        return $this->czy_potwierdzone;
+    }
+
+    public function setCzyPotwierdzone(bool $czy_potwierdzone): self
+    {
+        $this->czy_potwierdzone = $czy_potwierdzone;
+
+        return $this;
+    }
 }
