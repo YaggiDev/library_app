@@ -90,7 +90,7 @@ class Dzielo
      */
     public function getKategoriaId()
     {
-        return $this->kategoria_id;
+        return (int)$this->kategoria_id;
     }
 
     /**
