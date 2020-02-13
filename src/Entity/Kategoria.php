@@ -16,6 +16,11 @@ class Kategoria
      */
     private $id;
 
+    /**
+     * @ORM\Column(type= "string", unique = true, nullable = false)
+     */
+    private $nazwa;
+
     public function getId(): ?int
     {
         return $this->id;
