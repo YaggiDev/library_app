@@ -92,7 +92,10 @@ class Dzielo
     {
         return (int)$this->kategoria_id;
     }
-
+    public function kategoria_id()
+    {
+        return $this->kategoria_id;
+    }
     /**
      * @param mixed $kategoria_id
      */
