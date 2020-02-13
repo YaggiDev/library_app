@@ -88,7 +88,7 @@ class DzieloController extends AbstractController
             return $this->redirectToRoute('dzielo_index');
         }
         $dzielo_id = $dzielo->getId();
-        $autor_dziela = $this->getDoctrine()->getRepository(Autor_dzielo::class)->findOneBy(['dzielo_id'=>11]);
+        $autor_dziela = $this->getDoctrine()->getRepository(Autor_dzielo::class)->findOneBy(['dzielo_id'=>12]);
         var_dump($dzielo->getId());
         $id = $autor_dziela->getId();
 //        $autor = $this->getDoctrine()->getRepository(Autor::class)->findOneBy(['id'=>$id]);
