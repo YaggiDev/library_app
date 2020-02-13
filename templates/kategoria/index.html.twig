@@ -9,6 +9,7 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Nazwa kategorii</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -16,6 +17,7 @@
         {% for kategorium in kategorias %}
             <tr>
                 <td>{{ kategorium.id }}</td>
+                <td>{{ kategoria.nazwa }}</td>
                 <td>
                     <a href="{{ path('kategoria_show', {'id': kategorium.id}) }}">show</a>
                     <a href="{{ path('kategoria_edit', {'id': kategorium.id}) }}">edit</a>
