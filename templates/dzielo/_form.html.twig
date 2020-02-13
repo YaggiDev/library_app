@@ -4,7 +4,7 @@
          {% for autor in autorzy %}
              {% if id is defined %}
                 {% if id == autor.id %}
-                    {{ id }}
+                    <option>{{ id }}</option>
                     <option value="{{ autor.id }}" selected>{{ autor.getImie()}} {{ autor.getNazwisko() }}</option>
                 {% else %}
                     <option value="{{ autor.id }}">{{ autor.getImie()}} {{ autor.getNazwisko() }}</option>
