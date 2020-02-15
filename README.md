@@ -16,7 +16,7 @@ Library management application project for IT studies.
 - [ ] Implement ROLE_ADMIN authority instead using static if statements in views
 - [ ] Change fields "Polozenie pierwotne" and "Polozenie aktualne" in DzieloFormType
 - [ ] When returning the book current localization need to be required
-- [ ] Fix Author select-option field when editting specific book
+- [x] Fix Author select-option field when editting specific book
 - [ ] Add restrictions to form fields
 - [ ] Work on forms style
 - [ ] ...
