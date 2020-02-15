@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PrywatneDzielo{% endblock %}
+
+{% block body %}
+    <h1>PrywatneDzielo</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ prywatne_dzielo.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('prywatne_dzielo_index') }}">back to list</a>
+
+    <a href="{{ path('prywatne_dzielo_edit', {'id': prywatne_dzielo.id}) }}">edit</a>
+
+    {{ include('prywatne_dzielo/_delete_form.html.twig') }}
+{% endblock %}

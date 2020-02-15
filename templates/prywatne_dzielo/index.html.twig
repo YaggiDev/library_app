@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PrywatneDzielo index{% endblock %}
+
+{% block body %}
+    <h1>PrywatneDzielo index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for prywatne_dzielo in prywatne_dzielos %}
+            <tr>
+                <td>{{ prywatne_dzielo.id }}</td>
+                <td>
+                    <a href="{{ path('prywatne_dzielo_show', {'id': prywatne_dzielo.id}) }}">show</a>
+                    <a href="{{ path('prywatne_dzielo_edit', {'id': prywatne_dzielo.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('prywatne_dzielo_new') }}">Create new</a>
+{% endblock %}

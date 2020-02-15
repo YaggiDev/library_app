@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New PrywatneDzielo{% endblock %}
+
+{% block body %}
+    <h1>Create new PrywatneDzielo</h1>
+
+    {{ include('prywatne_dzielo/_form.html.twig') }}
+
+    <a href="{{ path('prywatne_dzielo_index') }}">back to list</a>
+{% endblock %}
