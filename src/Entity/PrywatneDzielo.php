@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PrywatneDzieloRepository")
  */
@@ -17,13 +18,13 @@ class PrywatneDzielo
     private $id;
 
     /**
-     * @ManyToOne(targetEntity="Dzielo")
+     * @ORM\ManyToOne(targetEntity="Dzielo")
      * @ORM\JoinColumn(name="dzielo_id", referencedColumnName="id")
      */
     private $dzielo_id;
 
     /**
-     * @ManyToOne(targetEntity="Uzytkownik")
+     * @ORM\ManyToOne(targetEntity="Uzytkownik")
      * @ORM\JoinColumn(name="uzytkownik_id", referencedColumnName="id")
      */
     private $uzytkownik_id;
