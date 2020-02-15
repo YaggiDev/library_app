@@ -22,12 +22,7 @@ class Dzielo
      * @ORM\Column(type="string", length=20)
      */
     private $kod_jezyka;
-	
-	/**
-     * @ORM\Column(type="string", length=60)
-     */
-    private $rodzaj_dokumentu;
-	
+
 	/**
      * @ORM\Column(type="string", length=13)
      */
@@ -134,22 +129,6 @@ class Dzielo
     public function setKodJezyka($kod_jezyka)
     {
         $this->kod_jezyka = $kod_jezyka;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRodzajDokumentu()
-    {
-        return $this->rodzaj_dokumentu;
-    }
-
-    /**
-     * @param mixed $rodzaj_dokumentu
-     */
-    public function setRodzajDokumentu($rodzaj_dokumentu)
-    {
-        $this->rodzaj_dokumentu = $rodzaj_dokumentu;
     }
 
     /**

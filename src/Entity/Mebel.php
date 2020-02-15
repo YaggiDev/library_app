@@ -19,6 +19,11 @@ class Mebel
     private $ilosc_polek;
 
     /**
+     * @ORM\Column(type="string", length = 20, unique=true)
+     */
+    private $nazwa;
+
+    /**
      * @return mixed
      */
     public function getIloscPolek()
@@ -49,11 +54,7 @@ class Mebel
     {
         $this->nazwa = $nazwa;
     }
-	
-	/**
-     * @ORM\Column(type="string", length = 20, unique=true)
-     */
-    private $nazwa;
+
 	
 	/**
      * @ORM\ManyToOne(targetEntity="Pokoj")
