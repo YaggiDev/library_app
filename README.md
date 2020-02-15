@@ -12,7 +12,7 @@ Library management application project for IT studies.
 # TO-DO List:
 - [ ] Correct the DB
 - [x] Add associated fields to forms (i.e. Author field when adding the Book etc.)
-- [ ] Build DB diagram (Crow's foot diagram) based on Class Diagram 
+- [x] Build DB diagram (Crow's foot diagram) based on Class Diagram 
 - [ ] Implement ROLE_ADMIN authority instead using static if statements in views
 - [ ] Change fields "Polozenie pierwotne" and "Polozenie aktualne" in DzieloFormType
 - [ ] When returning the book current localization need to be required
