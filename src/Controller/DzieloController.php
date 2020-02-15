@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Autor;
 use App\Entity\Dzielo;
 use App\Entity\Autor_dzielo;
+use App\Entity\Kategoria;
 use App\Form\DzieloType;
 use App\Repository\DzieloRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -28,7 +29,7 @@ class DzieloController extends AbstractController
 
         return $this->render('dzielo/index.html.twig', [
             'dzielos' => $dzieloRepository->findAll(),
-
+            'kategorie' => $kategorie = $this->getDoctrine()->getRepository(Kategoria::class)->findAll(),
 
         ]);
     }
@@ -69,8 +70,12 @@ class DzieloController extends AbstractController
      */
     public function show(Dzielo $dzielo): Response
     {
+        $autor_id = $this->getDoctrine()->getRepository(Autor_dzielo::class)->findOneBy(['dzielo_id' => $dzielo->getId()]);
+        $autor = $this->getDoctrine()->getRepository(Autor::class)->find($autor_id);
         return $this->render('dzielo/show.html.twig', [
             'dzielo' => $dzielo,
+            'autor' => $autor,
+
         ]);
     }
 
@@ -123,9 +128,12 @@ class DzieloController extends AbstractController
 
         $em = $this->getDoctrine()->getManager();
         $query = $em->createQuery(
-            'SELECT p FROM App\Entity\Dzielo p
-    WHERE p.tytul LIKE :data')
-            ->setParameter('data','%'.$data.'%');
+            'SELECT p, a FROM App\Entity\Dzielo p JOIN p.kategoria_id a
+    WHERE p.tytul LIKE :data AND a.nazwa LIKE :kategoria ')
+            ->setParameters(array(
+                'data'=>'%'.$data.'%',
+                'kategoria' => $category
+            ));
 
 
         $dziela = $query->getResult();

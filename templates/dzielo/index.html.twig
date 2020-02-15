@@ -10,13 +10,13 @@
                 <th>Id</th>
                 <th>Tytul</th>
                 <th>Kod_jezyka</th>
-                <th>Rodzaj_dokumentu</th>
+                <th>Kategoria</th>
                 <th>Polozenie_aktualne</th>
                 <th>Zdjecie</th>
                 <th>Czy dostępne</th>
                 <th>Czy dla dorosłych</th>
-                <th>Akcje</th>
                 <th>Autor</th>
+                <th>Akcje</th>
             </tr>
         </thead>
         <tbody>
@@ -25,20 +25,20 @@
                 <td>{{ dzielo.id }}</td>
                 <td>{{ dzielo.tytul }}</td>
                 <td>{{ dzielo.kodJezyka }}</td>
-                <td>{{ dzielo.rodzajDokumentu }}</td>
+                <td>{{ dzielo.kategoria_id }}</td>
                 <td>{{ dzielo.polozenieAktualne }}</td>
                 <td>{{ dzielo.zdjecie }}</td>
                 <td>{{ dzielo.czyWypozyczone ? 'Tak' : 'Nie' }}</td>
 {#                <td>{{ dzielo.dataDodania ? dzielo.dataDodania|date('Y-m-d H:i:s') : '' }}</td>#}
 {#                <td>{{ dzielo.dataUsuniecia ? dzielo.dataUsuniecia|date('Y-m-d H:i:s') : '' }}</td>#}
                 <td>{{ dzielo.czyDlaDoroslych ? 'Tak' : 'Nie' }}</td>
+                <td></td>
                 <td>
                     <a class="btn btn-primary" href="{{ path('dzielo_show', {'id': dzielo.id}) }}">Pokaż</a>
                     {% if app.user.username == 'admin' %}
                     <a class="btn btn-warning" href="{{ path('dzielo_edit', {'id': dzielo.id}) }}">Edytuj</a>
                     {% endif %}
                 </td>
-                <td></td>
             </tr>
         {% else %}
             <tr>
