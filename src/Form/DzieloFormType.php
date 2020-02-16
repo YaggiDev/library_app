@@ -14,8 +14,8 @@ class DzieloFormType extends AbstractType
         $builder
             ->add('tytul')
             ->add('kod_jezyka')
-            ->add('rodzaj_dokumentu')
             ->add('kod_dziala')
+            ->add('kategoria_id')
             ->add('polozenie_pierwotne')
             ->add('polozenie_aktualne')
             ->add('zdjecie')
