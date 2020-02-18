@@ -48,6 +48,6 @@
         </tbody>
     </table>
     {% if app.user.username == 'admin' %}
-    <a class="btn btn-success justify-content-center" href="{{ path('dzielo_new') }}">Dodaj dzieło</a>
+    <div class="justify-content-center>"<a class="btn btn-success" href="{{ path('dzielo_new') }}">Dodaj dzieło</a></div>
     {% endif %}
 {% endblock %}
