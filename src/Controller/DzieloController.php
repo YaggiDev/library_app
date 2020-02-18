@@ -101,7 +101,7 @@ class DzieloController extends AbstractController
             'autorzy' => $autor = $this->getDoctrine()->getRepository(Autor::class)->findAll(),
             'id' => $id,
             'form' => $form->createView(),
-        ]);
+        ]);r
     }
 
     /**
