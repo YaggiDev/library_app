@@ -1,5 +1,5 @@
 # Library app
-Library management application project for IT studies.
+Library management application project for IT studies. The project also includes, among others class, use-case, Crow's foot diagrams, specification of application.
 
 # Technologies in use:
 - Ubuntu server 18.04.4 LTS, Release: 18.04
