@@ -10,15 +10,15 @@ Library management application project for IT studies. The project also includes
 - Git
 
 # TO-DO List:
-- [ ] Correct the DB
+- [x] Correct the DB
 - [x] Add associated fields to forms (i.e. Author field when adding the Book etc.)
 - [x] Build DB diagram (Crow's foot diagram) based on Class Diagram 
-- [ ] Implement ROLE_ADMIN authority instead using static if statements in views
-- [ ] Change fields "Polozenie pierwotne" and "Polozenie aktualne" in DzieloFormType
-- [ ] When returning the book current localization need to be required
+- [x] Implement ROLE_ADMIN authority instead using static if statements in views
+- [x] Change fields "Polozenie pierwotne" and "Polozenie aktualne" in DzieloFormType
+- [x] When returning the book current localization need to be required
 - [x] Fix Author select-option field when editting specific book
-- [ ] Add restrictions to form fields
-- [ ] Work on forms style
+- [x] Add restrictions to form fields
+- [x] Work on forms style
 - [ ] ...
 
 
